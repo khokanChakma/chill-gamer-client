@@ -1,5 +1,5 @@
 
-const Navber = () => {
+const Home = () => {
     return (
         <div>
             
@@ -7,4 +7,4 @@ const Navber = () => {
     );
 };
 
-export default Navber;
+export default Home;
