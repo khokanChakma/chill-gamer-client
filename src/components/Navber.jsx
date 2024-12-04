@@ -1,9 +1,12 @@
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import logo from '../assets/logo.png'
+import { useContext } from "react";
+import { AuthContext } from "../authprovider/AuthProvider";
 
 const Navber = () => {
+    const { logOut, user } = useContext(AuthContext)
     return (
-        <div className="navbar bg-base-100">
+        <div className="navbar bg-green-200">
             <div className="navbar-start">
                 <div className="dropdown">
                     <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -45,7 +48,13 @@ const Navber = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                <a className="btn">Button</a>
+                {
+                    user && user?.email ? 
+                    <Link onClick={logOut}><a className="btn">LogOut</a></Link>
+                    : 
+                    <Link to='/login'><a className="btn">Login</a></Link>
+                }
+                
             </div>
         </div>
     );
