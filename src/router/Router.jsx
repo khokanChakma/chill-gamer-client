@@ -10,39 +10,40 @@ import Register from "../pages/Register";
 
 const Router = createBrowserRouter([
     {
-      path: "/",
-      element: <Mainlayout></Mainlayout>,
-      children: [
-        {
-            path:'/',
-            element: <Home></Home>
-        },
-        {
-            path:'/allReviews',
-            element: <AllReviews></AllReviews>
-        },
-        {
-            path:'/addReviews',
-            element: <AddReview></AddReview>
-        },
-        {
-            path:'/myReviews',
-            element: <MyReviews></MyReviews>
-        },
-        {
-            path:'/gameWatchList',
-            element: <GameWatchList></GameWatchList>
-        },
-        {
-            path:'/login',
-            element: <Login></Login>
-        },
-        {
-            path:'/register',
-            element: <Register></Register>
-        },
-      ]
+        path: "/",
+        element: <Mainlayout></Mainlayout>,
+        children: [
+            {
+                path: '/',
+                element: <Home></Home>
+            },
+            {
+                path: '/allReviews',
+                element: <AllReviews></AllReviews>,
+                loader: () => fetch('http://localhost:5000/reviews')
+            },
+            {
+                path: '/addReviews',
+                element: <AddReview></AddReview>
+            },
+            {
+                path: '/myReviews',
+                element: <MyReviews></MyReviews>
+            },
+            {
+                path: '/gameWatchList',
+                element: <GameWatchList></GameWatchList>
+            },
+            {
+                path: '/login',
+                element: <Login></Login>
+            },
+            {
+                path: '/register',
+                element: <Register></Register>
+            },
+        ]
     },
-  ]);
+]);
 
 export default Router;

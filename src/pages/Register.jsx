@@ -72,7 +72,6 @@ const Register = () => {
                     displayName: displayName,
                     email: email,
                 }
-                console.log(userData);
                 Swal.fire({
                     title: 'success!',
                     text: 'Register is successfully',
