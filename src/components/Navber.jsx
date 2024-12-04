@@ -50,9 +50,9 @@ const Navber = () => {
             <div className="navbar-end">
                 {
                     user && user?.email ? 
-                    <Link onClick={logOut}><a className="btn">LogOut</a></Link>
+                    <Link onClick={logOut}><button className="btn">LogOut</button></Link>
                     : 
-                    <Link to='/login'><a className="btn">Login</a></Link>
+                    <Link to='/login'><button className="btn">Login</button></Link>
                 }
                 
             </div>
