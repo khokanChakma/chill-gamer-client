@@ -5,6 +5,7 @@ import { AuthContext } from "../authprovider/AuthProvider";
 
 const Navber = () => {
     const { logOut, user } = useContext(AuthContext)
+    // console.log(user)
     return (
         <div className="navbar bg-green-200">
             <div className="navbar-start">
@@ -30,7 +31,7 @@ const Navber = () => {
                         <NavLink to='/allReviews'><li><a>All Reviews</a></li></NavLink>
                         <NavLink to='/addReviews'><li><a>Add Review</a></li></NavLink>
                         <NavLink to='/myReviews'><li><a>My Reviews</a></li></NavLink>
-                        <NavLink to='/gameWatchList'><li><a>Game WatchList</a></li></NavLink>
+                        <NavLink to='/watchList'><li><a>Game WatchList</a></li></NavLink>
                     </ul>
                 </div>
                 <a className="cursor-pointer">
@@ -43,7 +44,7 @@ const Navber = () => {
                     <NavLink to='/allReviews'><li><a>All Reviews</a></li></NavLink>
                     <NavLink to='/addReviews'><li><a>Add Review</a></li></NavLink>
                     <NavLink to='/myReviews'><li><a>My Reviews</a></li></NavLink>
-                    <NavLink to='/gameWatchList'><li><a>Game WatchList</a></li></NavLink>
+                    <NavLink to='/watchList'><li><a>Game WatchList</a></li></NavLink>
 
                 </ul>
             </div>

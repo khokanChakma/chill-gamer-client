@@ -29,11 +29,13 @@ const Router = createBrowserRouter([
             },
             {
                 path: '/myReviews',
-                element: <MyReviews></MyReviews>
+                element: <MyReviews></MyReviews>,
+                loader: () => fetch(`http://localhost:5000/reviews`)
             },
             {
-                path: '/gameWatchList',
-                element: <GameWatchList></GameWatchList>
+                path: '/watchList',
+                element: <GameWatchList></GameWatchList>,
+                loader: ()=> fetch('http://localhost:5000/watchList')
             },
             {
                 path: '/login',

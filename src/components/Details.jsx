@@ -4,7 +4,17 @@ import Swal from "sweetalert2";
 
 const Details = () => {
     const userData = useLoaderData()
+    console.log(userData)
     const { coverImage, title, review, name, email, rating, genres, _id } = userData;
+    const watchListData = {
+        coverImage: coverImage,
+        title: title,
+        review: review,
+        rating: rating,
+        genres: genres,
+        name: name,
+        email: email,
+    }
 
     const handleWatchList = () => {
         fetch('http://localhost:5000/watchList', {
@@ -12,7 +22,7 @@ const Details = () => {
             headers: {
                 'content-type': 'application/json'
             },
-            body: JSON.stringify(userData)
+            body: JSON.stringify(watchListData)
         })
             .then(res => res.json())
             .then(result => {
@@ -55,7 +65,7 @@ const Details = () => {
 
                     <br />
                     <div className="flex gap-6">
-                        <button disabled={isCard} onClick={() => handleWatchList(_id)} className="btn rounded-full px-4 text-white bg-[#9538E2]">Add to WatchList</button>
+                        <button onClick={() => handleWatchList(_id)} className="btn rounded-full px-4 text-white bg-[#9538E2]">Add to WatchList</button>
                     </div>
                 </div>
             </div>
