@@ -1,6 +1,5 @@
 import { useLoaderData } from "react-router-dom";
 import CardReview from "../components/CardReview";
-
 const AllReviews = () => {
     const allReviews = useLoaderData()
     return (
