@@ -3,7 +3,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../authprovider/AuthProvider";
 
 const Login = () => {
-    const {userLogin,setUser} = useContext(AuthContext);
+    const {userLogin,setUser,signInWithGoogle} = useContext(AuthContext);
     const location = useLocation();
     const navigate = useNavigate();
 
@@ -21,6 +21,13 @@ const Login = () => {
         })
         .then(error =>{
             console.log(error)
+        })
+    }
+    const handleGoogleLogin = () =>{
+        signInWithGoogle()
+        .then(result =>{
+            console.log(result)
+            navigate('/')
         })
     }
 
@@ -43,7 +50,7 @@ const Login = () => {
                             </label>
                             <input type='password' name="password" placeholder="password" className="input input-bordered" required />
                             <label className="label">
-                                {/* <a href="#" className="label-text-alt link link-hover">Forgot password?</a> */}
+                                <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
                             </label>
                         </div>
                         <div className="form-control mt-6">
@@ -51,7 +58,7 @@ const Login = () => {
                         </div>
                         <hr />
                         <div className="text-center">
-                            <button className="btn">Google Login</button>
+                            <div onClick={handleGoogleLogin} className="btn">Google Login</div>
                         </div>
                     </form>
                     <p className="text-center font-semibold">Dont’t Have An Account ? <Link className="text-red-500" to='/register'>Register</Link></p>

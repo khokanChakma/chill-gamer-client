@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const CardReview = ({ review }) => {
-    const { coverImage, title, name, rating, genres } = review;
+    const { coverImage, title, _id, rating, genres } = review;
     return (
         <div className="card card-compact bg-base-100 w-full shadow-xl">
             <figure>
@@ -14,9 +14,22 @@ const CardReview = ({ review }) => {
             <div className="card-body">
                 <h2 className="card-title text-2xl">{title}</h2>
                 <p className='text-xl'>Genres:{genres}</p>
-                <p className='text-xl'>Rating:{rating}</p>
+                <div className='flex'>
+                    <p className='text-xl'>Rating:{rating}</p>
+                    <div className="rating">
+                        <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
+                        <input
+                            type="radio"
+                            name="rating-2"
+                            className="mask mask-star-2 bg-orange-400"
+                            defaultChecked />
+                        <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
+                        <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
+                        <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
+                    </div>
+                </div>
                 <div className="card-actions">
-                    <button className="btn btn-primary">Buy Now</button>
+                    <Link to={`/details/${_id}`} className="btn btn-primary">Explore Details</Link>
                 </div>
             </div>
         </div>

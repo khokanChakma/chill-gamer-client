@@ -7,6 +7,7 @@ import AddReview from "../pages/AddReview";
 import GameWatchList from "../pages/GameWatchList";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
+import Details from "../components/Details";
 
 const Router = createBrowserRouter([
     {
@@ -41,6 +42,11 @@ const Router = createBrowserRouter([
             {
                 path: '/register',
                 element: <Register></Register>
+            },
+            {
+                path: '/details/:id',
+                element: <Details></Details>,
+                loader: ({params})=>fetch(`http://localhost:5000/reviews/${params.id}`)
             },
         ]
     },
