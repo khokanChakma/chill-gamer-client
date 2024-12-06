@@ -5,7 +5,6 @@ import { AuthContext } from "../authprovider/AuthProvider";
 const Login = () => {
     const {userLogin,setUser,signInWithGoogle} = useContext(AuthContext);
     const location = useLocation();
-    console.log(location)
     const navigate = useNavigate();
 
     const handleLoginSubmit = e =>{
@@ -27,7 +26,6 @@ const Login = () => {
     const handleGoogleLogin = () =>{
         signInWithGoogle()
         .then(result =>{
-            console.log(result)
             navigate(location?.state ? location?.state : '/')
         })
     }

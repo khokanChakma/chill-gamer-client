@@ -2,10 +2,12 @@ import { Link, NavLink } from "react-router-dom";
 import logo from '../assets/logo.png'
 import { useContext } from "react";
 import { AuthContext } from "../authprovider/AuthProvider";
+import 'react-tooltip/dist/react-tooltip.css'
+import { Tooltip } from "react-tooltip";
 
 const Navber = () => {
     const { logOut, user } = useContext(AuthContext)
-    // console.log(user)
+    console.log(user)
     return (
         <div className="navbar bg-green-200">
             <div className="navbar-start">
@@ -50,7 +52,13 @@ const Navber = () => {
             <div className="navbar-end">
                 {
                     user && user?.email ?
-                        <Link onClick={logOut}><button className="btn">LogOut</button></Link>
+                        <div className="flex gap-4 z-10">
+                            <Tooltip anchorSelect="#showTooltip" content={user?.email}/>
+                            <p>
+                                <img id="showTooltip" className="w-12 h-12 rounded-full cursor-pointer" src={user?.photoURL} alt="" />
+                            </p>
+                            <Link onClick={logOut}><button className="btn">LogOut</button></Link>
+                        </div>
                         :
                         <Link to='/login'><button className="btn">Login</button></Link>
                 }
