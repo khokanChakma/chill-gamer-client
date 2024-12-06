@@ -9,6 +9,7 @@ import Login from "../pages/Login";
 import Register from "../pages/Register";
 import Details from "../components/Details";
 import UpdateCard from "../components/UpdateCard";
+import PrivateRout from "./PrivateRout";
 
 const Router = createBrowserRouter([
     {
@@ -26,11 +27,11 @@ const Router = createBrowserRouter([
             },
             {
                 path: '/addReviews',
-                element: <AddReview></AddReview>
+                element: <PrivateRout><AddReview></AddReview></PrivateRout>
             },
             {
                 path: '/myReviews',
-                element: <MyReviews></MyReviews>,
+                element: <PrivateRout><MyReviews></MyReviews></PrivateRout>,
                 loader: () => fetch('http://localhost:5000/users')
             },
             {
@@ -40,7 +41,7 @@ const Router = createBrowserRouter([
             },
             {
                 path: '/watchList',
-                element: <GameWatchList></GameWatchList>,
+                element: <PrivateRout><GameWatchList></GameWatchList></PrivateRout>,
                 loader: ()=> fetch('http://localhost:5000/watchList')
             },
             {

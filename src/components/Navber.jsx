@@ -45,17 +45,16 @@ const Navber = () => {
                     <NavLink to='/addReviews'><li><a>Add Review</a></li></NavLink>
                     <NavLink to='/myReviews'><li><a>My Reviews</a></li></NavLink>
                     <NavLink to='/watchList'><li><a>Game WatchList</a></li></NavLink>
-
                 </ul>
             </div>
             <div className="navbar-end">
                 {
-                    user && user?.email ? 
-                    <Link onClick={logOut}><button className="btn">LogOut</button></Link>
-                    : 
-                    <Link to='/login'><button className="btn">Login</button></Link>
+                    user && user?.email ?
+                        <Link onClick={logOut}><button className="btn">LogOut</button></Link>
+                        :
+                        <Link to='/login'><button className="btn">Login</button></Link>
                 }
-                
+
             </div>
         </div>
     );

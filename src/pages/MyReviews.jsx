@@ -7,15 +7,17 @@ import Swal from "sweetalert2";
 
 const MyReviews = () => {
     const { user } = useContext(AuthContext);
-    console.log(user)
-   
+    console.log(user?.email)
+
     const [myReviews, setMyReviews] = useState([]);
     // console.log(myReviews);
     useEffect(() => {
-        fetch(`http://localhost:5000/reviews?email=${user?.email}`)
+        fetch(`http://localhost:5000/reviews`)
             .then(res => res.json())
             .then(data => {
-                setMyReviews(data);
+                console.log(data)
+                const remainingData = data.filter(d=>d.email == user?.email) 
+                setMyReviews(remainingData)
             })
     }, [user])
 
