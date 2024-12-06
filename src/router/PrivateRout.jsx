@@ -14,11 +14,7 @@ const PrivateRout = ({children}) => {
         return children;
     }
     return <Navigate state={location.pathname} to='/login'></Navigate>;
-    return (
-        <div>
-
-        </div>
-    );
+    
 };
 
 export default PrivateRout;

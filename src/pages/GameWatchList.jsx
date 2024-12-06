@@ -4,14 +4,14 @@ import { AuthContext } from "../authprovider/AuthProvider";
 
 const GameWatchList = () => {
     const data = useLoaderData();
-    // const {user} = useContext(AuthContext);
-    // const [userData,setUserData] = useState([])
-    // console.log(userData)
-    // useEffect(()=>{
-    //     const remainingData = data.filter(d=>d.email == user?.email)
-    //     console.log(remainingData)
-    //     setUserData(remainingData);
-    // },[user?.email])
+    const {user} = useContext(AuthContext);
+    const [userData,setUserData] = useState([])
+    console.log(userData)
+    useEffect(()=>{
+        const remainingData = data.filter(d=>d.email == user?.email)
+        console.log(remainingData)
+        setUserData(remainingData);
+    },[user?.email])
     return (
         <div>
             <div className="">
@@ -31,7 +31,7 @@ const GameWatchList = () => {
                     <tbody>
                         {/* row 1 */}
                         {
-                            data.map((singleData, index) => <tr key={singleData?._id}>
+                            userData.map((singleData, index) => <tr key={singleData?._id}>
                                 <th>{index + 1}</th>
                                 <td>
                                     <img className="w-24 h-20" src={singleData?.coverImage} alt="" />
