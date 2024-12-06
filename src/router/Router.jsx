@@ -8,6 +8,7 @@ import GameWatchList from "../pages/GameWatchList";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
 import Details from "../components/Details";
+import UpdateCard from "../components/UpdateCard";
 
 const Router = createBrowserRouter([
     {
@@ -30,6 +31,12 @@ const Router = createBrowserRouter([
             {
                 path: '/myReviews',
                 element: <MyReviews></MyReviews>,
+                loader: () => fetch('http://localhost:5000/users')
+            },
+            {
+                path: '/update/:id',
+                element: <UpdateCard></UpdateCard>,
+                loader: ({params})=> fetch(`http://localhost:5000/review/${params.id}`)
             },
             {
                 path: '/watchList',
