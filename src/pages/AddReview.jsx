@@ -84,7 +84,7 @@ const AddReview = () => {
                             <label className="label">
                                 <span className="label-text text-lg font-semibold">Rating</span>
                             </label>
-                            <input type="text" name='rating' placeholder="Rating" className="input input-bordered" required />
+                            <input type="text" name='rating' min={1} max={9} placeholder="Rating" className="input input-bordered" required />
                         </div>
                     </div>
                     {/* publishing year and genres row */}

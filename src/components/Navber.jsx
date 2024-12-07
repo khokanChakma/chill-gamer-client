@@ -4,10 +4,10 @@ import { useContext } from "react";
 import { AuthContext } from "../authprovider/AuthProvider";
 import 'react-tooltip/dist/react-tooltip.css'
 import { Tooltip } from "react-tooltip";
+import Theme from "../Theme/Theme";
 
 const Navber = () => {
     const { logOut, user } = useContext(AuthContext)
-    console.log(user)
     return (
         <div className="navbar bg-green-200">
             <div className="navbar-start">
@@ -49,11 +49,16 @@ const Navber = () => {
                     <NavLink to='/watchList'><li><a>Game WatchList</a></li></NavLink>
                 </ul>
             </div>
+
             <div className="navbar-end">
+
                 {
                     user && user?.email ?
-                        <div className="flex gap-4 z-10">
-                            <Tooltip anchorSelect="#showTooltip" content={user?.email}/>
+                        <div className="flex justify-center items-center gap-4 z-10">
+                            <div>
+                                <Theme></Theme>
+                            </div>
+                            <Tooltip anchorSelect="#showTooltip" content={user?.email} />
                             <p>
                                 <img id="showTooltip" className="w-12 h-12 rounded-full cursor-pointer" src={user?.photoURL} alt="" />
                             </p>
