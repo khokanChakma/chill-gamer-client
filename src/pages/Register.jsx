@@ -44,7 +44,6 @@ const Register = () => {
                     .catch(error => {
                         console.log(error)
                     })
-                console.log(user)
                 // save new user info to the database
                 fetch('http://localhost:5000/users', {
                     method: 'POST',

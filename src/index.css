@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+html{
+    overflow: scroll;
+}
 .active {
     background-color: rgb(198, 198, 198);
 }

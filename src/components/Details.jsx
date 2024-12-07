@@ -4,7 +4,6 @@ import Swal from "sweetalert2";
 
 const Details = () => {
     const userData = useLoaderData()
-    console.log(userData)
     const { coverImage, title, review, name, email, rating, genres, _id } = userData;
     const watchListData = {
         coverImage: coverImage,
@@ -26,7 +25,6 @@ const Details = () => {
         })
             .then(res => res.json())
             .then(result => {
-                console.log(result)
                 if (result.insertedId) {
                     Swal.fire({
                         icon: "success",

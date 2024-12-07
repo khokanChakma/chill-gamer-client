@@ -6,8 +6,6 @@ const AddReview = () => {
     const {user} = useContext(AuthContext)
     const userName = user?.displayName;
     const userEmail =user?.email;
-    console.log(userName,userEmail);
-
     const handleSubmit = e =>{
         e.preventDefault();
         const form = e.target;
@@ -38,7 +36,6 @@ const AddReview = () => {
         })
             .then(res => res.json())
             .then(result => {
-                console.log(result)
                 if (result.insertedId) {
                     Swal.fire({
                         icon: "success",

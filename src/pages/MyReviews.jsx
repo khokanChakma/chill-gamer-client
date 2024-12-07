@@ -7,15 +7,12 @@ import Swal from "sweetalert2";
 
 const MyReviews = () => {
     const { user } = useContext(AuthContext);
-    console.log(user?.email)
 
     const [myReviews, setMyReviews] = useState([]);
-    // console.log(myReviews);
     useEffect(() => {
         fetch(`http://localhost:5000/reviews`)
             .then(res => res.json())
             .then(data => {
-                console.log(data)
                 const remainingData = data.filter(d=>d.email == user?.email) 
                 setMyReviews(remainingData)
             })
@@ -38,7 +35,6 @@ const MyReviews = () => {
                 })
                     .then(res => res.json())
                     .then(data => {
-                        console.log(data)
                         if (data.deletedCount > 0) {
                             Swal.fire({
                                 title: "Deleted!",
@@ -74,7 +70,7 @@ const MyReviews = () => {
                             myReviews.map((singleData, index) => <tr key={singleData?._id}>
                                 <th>{index + 1}</th>
                                 <td>
-                                    <img className="w-24 h-20" src={singleData?.coverImage} alt="" />
+                                    <img className="w-24 h-20 rounded-xl" src={singleData?.coverImage} alt="" />
                                 </td>
                                 <td>{singleData?.title}</td>
                                 <td>{singleData?.review}</td>

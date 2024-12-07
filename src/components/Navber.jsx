@@ -51,13 +51,12 @@ const Navber = () => {
             </div>
 
             <div className="navbar-end">
-
+                <div className="mr-4">
+                    <Theme></Theme>
+                </div>
                 {
                     user && user?.email ?
                         <div className="flex justify-center items-center gap-4 z-10">
-                            <div>
-                                <Theme></Theme>
-                            </div>
                             <Tooltip anchorSelect="#showTooltip" content={user?.email} />
                             <p>
                                 <img id="showTooltip" className="w-12 h-12 rounded-full cursor-pointer" src={user?.photoURL} alt="" />

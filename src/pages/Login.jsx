@@ -1,33 +1,47 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../authprovider/AuthProvider";
+import Swal from "sweetalert2";
 
 const Login = () => {
-    const {userLogin,setUser,signInWithGoogle} = useContext(AuthContext);
+    const { userLogin, setUser, signInWithGoogle } = useContext(AuthContext);
+    const [errorMessage, setErrorMessage] = useState('');
     const location = useLocation();
     const navigate = useNavigate();
 
-    const handleLoginSubmit = e =>{
+    const handleLoginSubmit = e => {
         e.preventDefault();
         const form = e.target;
         const email = form.email.value;
         const password = form.password.value;
 
-        userLogin(email,password)
-        .then(result => {
-            const user = result.user;
-            setUser(user)
-            navigate(location?.state ? location.state : '/')
-        })
-        .then(error =>{
-            console.log(error)
-        })
+        userLogin(email, password)
+            .then(result => {
+                const user = result.user;
+                setUser(user)
+                Swal.fire({
+                    title: 'success!',
+                    text: 'Login is successfully',
+                    icon: 'success',
+                })
+                navigate(location?.state ? location.state : '/')
+               
+            })
+            .catch(error => {
+                setErrorMessage('User email or Password doesn,t match. please try again')
+            })
     }
-    const handleGoogleLogin = () =>{
+    const handleGoogleLogin = () => {
         signInWithGoogle()
-        .then(result =>{
-            navigate(location?.state ? location?.state : '/')
-        })
+            .then(result => {
+                Swal.fire({
+                    title: 'success!',
+                    text: 'Login is successfully',
+                    icon: 'success',
+                })
+                navigate(location?.state ? location?.state : '/')
+
+            })
     }
 
 
@@ -52,6 +66,9 @@ const Login = () => {
                                 <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
                             </label>
                         </div>
+                        {
+                            errorMessage && <p className="text-red-600">{errorMessage}</p>
+                        }
                         <div className="form-control mt-6">
                             <button className="btn btn-neutral rounded-none">Login</button>
                         </div>
