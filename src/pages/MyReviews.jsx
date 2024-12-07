@@ -53,7 +53,7 @@ const MyReviews = () => {
     return (
         <div>
             <div className="">
-                <table className="table">
+                <table className="md:table">
                     {/* head */}
                     <thead>
                         <tr className="">
@@ -61,10 +61,10 @@ const MyReviews = () => {
                             <th>cover Photo</th>
                             <th>Title</th>
                             <th>Review Description</th>
-                            <th>User Email</th>
+                            <th className="hidden md:block">User Email</th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody className="h-56">
                         {/* row 1 */}
                         {
                             myReviews.map((singleData, index) => <tr key={singleData?._id}>
@@ -74,8 +74,8 @@ const MyReviews = () => {
                                 </td>
                                 <td>{singleData?.title}</td>
                                 <td>{singleData?.review}</td>
-                                <td>{singleData?.email}</td>
-                                <td className='space-x-2'>
+                                <td className="hidden md:block">{singleData?.email}</td>
+                                <td className='space-x-2 space-y-2'>
                                     <button onClick={() => handleDelete(singleData?._id)} className="btn text-xl"><MdDeleteOutline /></button>
                                     <Link to={`/update/${singleData._id}`}><button className="btn text-xl"><FiEdit /></button></Link>
                                 </td>

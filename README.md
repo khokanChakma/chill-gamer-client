@@ -16,11 +16,13 @@ Build Chill Gamer, a user-friendly game review application. The goal of this pro
 - Banner with Slider .
 
 <h2>Npm packages:</h2>
-- React router.
-- sweetalert 2.
-- React-simple-typewriter.
-- React-tooltip.
-- React-icons.
+<ul>
+    <li> React router.</li>
+    <li>sweetalert 2</li>
+    <li>React-simple-typewriter</li>
+    <li>React-tooltip</li>
+    <li>React-icons</li>
+</ul>       
 
 Project Live link : 
 Project github Link :

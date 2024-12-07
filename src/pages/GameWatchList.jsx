@@ -21,7 +21,7 @@ const GameWatchList = () => {
                             <th>cover Photo</th>
                             <th>Title</th>
                             <th>Review Description</th>
-                            <th>Email</th>
+                            <th className="hidden md:block">Email</th>
                            
                            
                         </tr>
@@ -36,7 +36,7 @@ const GameWatchList = () => {
                                 </td>
                                 <td>{singleData?.title}</td>
                                 <td>{singleData?.review}</td>
-                                <td>{singleData?.email}</td>
+                                <td className="hidden md:block">{singleData?.email}</td>
                             </tr>)
                         }
                     </tbody>

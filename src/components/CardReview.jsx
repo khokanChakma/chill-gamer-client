@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const CardReview = ({ review }) => {
     const { coverImage, title, _id, rating, genres, year } = review;
     return (
-        <div className="card card-compact bg-base-100 w-full shadow-xl">
+        <div className="card card-compact bg-base-100 w-full p-4 border shadow-xl">
             <figure>
                 <img
                     className='h-[300px]'

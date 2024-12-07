@@ -1,6 +1,7 @@
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { AuthContext } from "../authprovider/AuthProvider";
 import Swal from "sweetalert2";
+import bgImg from '../assets/bg3.jpg'
 import { useLoaderData } from "react-router-dom";
 
 const UpdateCard = () => {
@@ -51,23 +52,23 @@ const UpdateCard = () => {
 
     }
     return (
-        <div className='pb-8'>
+        <div className='pb-8 bg-cover bg-center' style={{backgroundImage: `url(${bgImg})`}}>
             <div className="text-center p-4">
-                <h1 className="text-3xl font-bold">Update Review!</h1>
+                <h1 className="text-3xl font-bold text-white">Update Review!</h1>
             </div>
-            <div className="md:w-3/4 mx-auto card rounded-none bg-base-100 w-full shrink-0 shadow-2xl">
+            <div className="md:w-3/4 mx-auto card rounded-none w-full shrink-0 shadow-2xl">
                 <form onSubmit={handleSubmit}  className="card-body">
                     {/* Cover Image and title row */}
                     <div className='flex flex-col lg:flex-row gap-5'>
                         <div className="form-control flex-1">
                             <label className="label">
-                                <span className="label-text text-lg font-semibold">Game Cover Image</span>
+                                <span className="label-text  text-white text-lg font-semibold">Game Cover Image</span>
                             </label>
                             <input type="text" defaultValue={coverImage} name='coverImage' placeholder="Cover Image" className="input input-bordered" required />
                         </div>
                         <div className="form-control flex-1">
                             <label className="label">
-                                <span className="label-text text-lg font-semibold">Game Title</span>
+                                <span className="label-text  text-white text-lg font-semibold">Game Title</span>
                             </label>
                             <input type="text" defaultValue={title} name='title' placeholder="Game Title" className="input input-bordered" required />
                         </div>
@@ -76,13 +77,13 @@ const UpdateCard = () => {
                     <div className='flex flex-col lg:flex-row gap-5'>
                         <div className="form-control flex-1">
                             <label className="label">
-                                <span className="label-text text-lg font-semibold">Review Description</span>
+                                <span className="label-text  text-white text-lg font-semibold">Review Description</span>
                             </label>
                             <input type="text" defaultValue={review}  name='review' placeholder="Review Description" className="input input-bordered" required />
                         </div>
                         <div className="form-control flex-1">
                             <label className="label">
-                                <span className="label-text text-lg font-semibold">Rating</span>
+                                <span className="label-text  text-white text-lg font-semibold">Rating</span>
                             </label>
                             <input type="text" defaultValue={rating} name='rating' placeholder="Rating" className="input input-bordered" required />
                         </div>
@@ -91,13 +92,13 @@ const UpdateCard = () => {
                     <div className='flex flex-col lg:flex-row gap-5'>
                         <div className="form-control flex-1">
                             <label className="label">
-                                <span className="label-text text-lg font-semibold">Publishing year</span>
+                                <span className="label-text  text-white text-lg font-semibold">Publishing year</span>
                             </label>
                             <input type="text" defaultValue={year} name='year' placeholder="Publishing year" className="input input-bordered" required />
                         </div>
                         <div className="form-control md:w-1/2">
                             <label className="label">
-                                <span className="label-text text-lg font-semibold">Genres</span>
+                                <span className="label-text  text-white text-lg font-semibold">Genres</span>
                             </label>
                             <select className="input input-bordered" defaultValue={genres} name="genres">
                                 <option value='action'>Action</option>
@@ -113,13 +114,13 @@ const UpdateCard = () => {
                     <div className='flex flex-col lg:flex-row gap-5'>
                         <div className="form-control flex-1">
                             <label className="label">
-                                <span className="label-text text-lg font-semibold">User Email</span>
+                                <span className="label-text  text-white text-lg font-semibold">User Email</span>
                             </label>
                             <input type="text" name='email' value={userEmail} placeholder="Publishing year" className="input input-bordered" required />
                         </div>
                         <div className="form-control flex-1">
                             <label className="label">
-                                <span className="label-text text-lg font-semibold">User Name</span>
+                                <span className="label-text  text-white text-lg font-semibold">User Name</span>
                             </label>
                             <input type="text" name='name' value={userName} placeholder="Coffee Details" className="input input-bordered" required />
                         </div>
