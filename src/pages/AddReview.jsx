@@ -84,7 +84,7 @@ const AddReview = () => {
                             <label className="label">
                                 <span className="label-text text-lg font-semibold">Rating</span>
                             </label>
-                            <input type="text" name='rating' min={1} max={9} placeholder="Rating" className="input input-bordered" required />
+                            <input type="number" name='rating' min='1' max="9"placeholder="Rating" className="input input-bordered" required />
                         </div>
                     </div>
                     {/* publishing year and genres row */}
@@ -103,9 +103,7 @@ const AddReview = () => {
                                 <option value='action'>Action</option>
                                 <option value='adventure'>Adventure</option>
                                 <option value='sport'>Sport</option>
-                                <option value='fighting'>Fighting</option>
                                 <option value='racing'>Racing</option>
-                                <option value='shooter'>Shooter</option>
                             </select>
                         </div>
                     </div>

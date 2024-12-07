@@ -10,11 +10,13 @@ import Register from "../pages/Register";
 import Details from "../components/Details";
 import UpdateCard from "../components/UpdateCard";
 import PrivateRout from "./PrivateRout";
+import ErrorPage from "../components/ErrorPage";
 
 const Router = createBrowserRouter([
     {
         path: "/",
         element: <Mainlayout></Mainlayout>,
+        errorElement: <ErrorPage></ErrorPage>,
         children: [
             {
                 path: '/',
@@ -24,7 +26,13 @@ const Router = createBrowserRouter([
             {
                 path: '/allReviews',
                 element: <AllReviews></AllReviews>,
-                loader: () => fetch('http://localhost:5000/reviews')
+                loader: () => fetch('http://localhost:5000/reviews'),
+                children:[
+                    {
+                        path: '/allReviews/:genres',
+
+                    }
+                ]
             },
             {
                 path: '/addReviews',
