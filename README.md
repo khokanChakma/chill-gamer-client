@@ -9,18 +9,18 @@ Build Chill Gamer, a user-friendly game review application. The goal of this pro
 
 <h2>5 key features of the project: </h2>
 
-1. categorise details by clicked view Explore Details .
-2. Authentication System .
-3. Add Review Page.
-4. My Reviews Page.
-5. Banner with Slider .
+- categorise details by clicked view Explore Details .
+- Authentication System .
+- Add Review Page.
+- My Reviews Page.
+- Banner with Slider .
 
 <h2>Npm packages:</h2>
-1. React router.
-2. sweetalert 2.
-3. React-simple-typewriter.
-4. React-tooltip.
-5. React-icons.
+- React router.
+- sweetalert 2.
+- React-simple-typewriter.
+- React-tooltip.
+- React-icons.
 
-Project Live link :  https://effortless-torrone-6fc9a3.netlify.app/
-Project github Link : https://github.com/programming-hero-web-course1/b10-a9-authentication-khokan784
+Project Live link : 
+Project github Link :
