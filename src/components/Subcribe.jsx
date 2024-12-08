@@ -5,13 +5,15 @@ const Subcribe = () => {
     return (
         <div>
             <div className="hero bg-base-200 py-10">
-                <div className="hero-content flex-col lg:flex-row">
-                    <Fade cascade damping={0.3}>
-                        <img
-                            src={gameImg}
-                            className="max-w-xl rounded-lg shadow-2xl" />
-                    </Fade>
-                    <div className='flex flex-col justify-center items-center'>
+                <div className="flex flex-col lg:flex-row">
+                    <div>
+                        <Fade cascade damping={0.3}>
+                            <img
+                                src={gameImg}
+                                className="w-full rounded-lg shadow-2xl" />
+                        </Fade>
+                    </div>
+                    <div className='flex flex-col justify-center items-center p-6'>
                         <Fade cascade damping={0.3}>
                             <p><h1 className="text-5xl text-center font-bold">Subscribe to the Our Games Email List</h1></p>
                             <p className="py-6 text-center">
