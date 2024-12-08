@@ -36,9 +36,11 @@ const Navber = () => {
                         <NavLink to='/watchList'><li><a>Game WatchList</a></li></NavLink>
                     </ul>
                 </div>
-                <a className="cursor-pointer">
-                    <img className="w-20" src={logo} alt="" />
-                </a>
+                <Link to='/'>
+                    <a className="cursor-pointer">
+                        <img className="w-20" src={logo} alt="" />
+                    </a>
+                </Link>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1 font-bold">
