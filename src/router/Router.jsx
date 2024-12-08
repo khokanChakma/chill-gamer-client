@@ -21,12 +21,12 @@ const Router = createBrowserRouter([
             {
                 path: '/',
                 element: <Home></Home>,
-                loader: () => fetch('http://localhost:5000/reviewData')
+                loader: () => fetch('https://chill-gamer-server-mocha.vercel.app/reviewData')
             },
             {
                 path: '/allReviews',
                 element: <AllReviews></AllReviews>,
-                loader: () => fetch('http://localhost:5000/reviews'),
+                loader: () => fetch('https://chill-gamer-server-mocha.vercel.app/reviews'),
                 children:[
                     {
                         path: '/allReviews/:genres',
@@ -41,17 +41,17 @@ const Router = createBrowserRouter([
             {
                 path: '/myReviews',
                 element: <PrivateRout><MyReviews></MyReviews></PrivateRout>,
-                loader: () => fetch('http://localhost:5000/users')
+                loader: () => fetch('https://chill-gamer-server-mocha.vercel.app/users')
             },
             {
                 path: '/update/:id',
                 element: <UpdateCard></UpdateCard>,
-                loader: ({params})=> fetch(`http://localhost:5000/review/${params.id}`)
+                loader: ({params})=> fetch(`https://chill-gamer-server-mocha.vercel.app/review/${params.id}`)
             },
             {
                 path: '/watchList',
                 element: <PrivateRout><GameWatchList></GameWatchList></PrivateRout>,
-                loader: ()=> fetch('http://localhost:5000/watchList')
+                loader: ()=> fetch('https://chill-gamer-server-mocha.vercel.app/watchList')
             },
             {
                 path: '/login',
@@ -64,7 +64,7 @@ const Router = createBrowserRouter([
             {
                 path: '/details/:id',
                 element: <PrivateRout><Details></Details></PrivateRout>,
-                loader: ({params})=>fetch(`http://localhost:5000/review/${params.id}`)
+                loader: ({params})=>fetch(`https://chill-gamer-server-mocha.vercel.app/review/${params.id}`)
             },
         ]
     },

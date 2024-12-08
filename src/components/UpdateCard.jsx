@@ -32,7 +32,7 @@ const UpdateCard = () => {
             email: email,
             name: name
         }
-        fetch(`http://localhost:5000/reviews/${_id}`, {
+        fetch(`https://chill-gamer-server-mocha.vercel.app/reviews/${_id}`, {
             method: 'PATCH',
             headers: {
                 'content-type': 'application/json'

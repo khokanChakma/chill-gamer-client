@@ -16,7 +16,7 @@ const Details = () => {
     }
 
     const handleWatchList = () => {
-        fetch('http://localhost:5000/watchList', {
+        fetch('https://chill-gamer-server-mocha.vercel.app/watchList', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

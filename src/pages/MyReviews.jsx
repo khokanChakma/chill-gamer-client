@@ -10,10 +10,10 @@ const MyReviews = () => {
 
     const [myReviews, setMyReviews] = useState([]);
     useEffect(() => {
-        fetch(`http://localhost:5000/reviews`)
+        fetch(`https://chill-gamer-server-mocha.vercel.app/reviews`)
             .then(res => res.json())
             .then(data => {
-                const remainingData = data.filter(d=>d.email == user?.email) 
+                const remainingData = data.filter(d => d.email == user?.email)
                 setMyReviews(remainingData)
             })
     }, [user])
@@ -30,7 +30,7 @@ const MyReviews = () => {
         }).then((result) => {
             if (result.isConfirmed) {
 
-                fetch(`http://localhost:5000/reviews/${_id}`, {
+                fetch(`https://chill-gamer-server-mocha.vercel.app/reviews/${_id}`, {
                     method: "DELETE"
                 })
                     .then(res => res.json())

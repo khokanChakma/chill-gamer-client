@@ -24,5 +24,8 @@ Build Chill Gamer, a user-friendly game review application. The goal of this pro
     <li>React-icons</li>
 </ul>       
 
-Project Live link : 
-Project github Link :
+github link client: https://github.com/programming-hero-web-course2/b10-a10-client-side-khokan784
+
+github link server : https://github.com/programming-hero-web-course2/b10-a10-server-side-khokan784
+
+Live link: https://animated-pothos-834935.netlify.app/

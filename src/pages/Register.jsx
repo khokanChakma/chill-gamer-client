@@ -45,7 +45,7 @@ const Register = () => {
                         console.log(error)
                     })
                 // save new user info to the database
-                fetch('http://localhost:5000/users', {
+                fetch('https://chill-gamer-server-mocha.vercel.app/users', {
                     method: 'POST',
                     headers: {
                         'content-type': 'application/json'
@@ -79,7 +79,7 @@ const Register = () => {
                 })
                 navigate('/')
                 // save new user info to the database
-                fetch('http://localhost:5000/users', {
+                fetch('https://chill-gamer-server-mocha.vercel.app/users', {
                     method: 'POST',
                     headers: {
                         'content-type': 'application/json'
