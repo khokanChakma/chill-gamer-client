@@ -8,3 +8,17 @@ html{
 .active {
     background-color: rgb(198, 198, 198);
 }
+
+:root{
+    --body_background: white;
+    --body_color: black;
+    --link_color: navy;
+    
+}
+
+[data-theme="dark"]{
+    --body_background: #282c34;
+    color: white;
+    --body_color: white;
+    --link_color: cyan;
+}

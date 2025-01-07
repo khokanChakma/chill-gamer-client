@@ -11,6 +11,8 @@ import Details from "../components/Details";
 import UpdateCard from "../components/UpdateCard";
 import PrivateRout from "./PrivateRout";
 import ErrorPage from "../components/ErrorPage";
+import About from "../components/About";
+import Contact from "../components/Contact";
 
 const Router = createBrowserRouter([
     {
@@ -62,8 +64,16 @@ const Router = createBrowserRouter([
                 element: <Register></Register>
             },
             {
+                path: '/about',
+                element: <About></About>
+            },
+            {
+                path: '/contact',
+                element: <Contact></Contact>
+            },
+            {
                 path: '/details/:id',
-                element: <PrivateRout><Details></Details></PrivateRout>,
+                element: <Details></Details>,
                 loader: ({params})=>fetch(`https://chill-gamer-server-mocha.vercel.app/review/${params.id}`)
             },
         ]

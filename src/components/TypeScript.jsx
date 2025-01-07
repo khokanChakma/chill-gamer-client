@@ -10,7 +10,7 @@ const TypeScript = () => {
 
 
     return (
-        <div className='h-14 text-center text-green-800 py-10'>
+        <div className='h-10 text-center text-[#018992] my-8'>
             <span className='text-4xl font-bold'>{text}</span>
         </div>
     );

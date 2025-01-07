@@ -7,15 +7,15 @@ const CardReview = ({ review }) => {
         <div className="card card-compact bg-base-100 w-full p-4 border shadow-xl">
             <figure>
                 <img
-                    className='h-[300px]'
+                    className='h-[200px]'
                     src={coverImage}
                     alt="games" />
             </figure>
-            <div className="card-body">
-                <h2 className="card-title text-2xl">{title}</h2>
-                <p className='text-xl'>Genres:{genres}</p>
+            <div className="flex flex-col justify-center items-center md:items-start space-y-1">
+                <h2 className="card-title text-xl">{title}</h2>
+                <p className=''>{genres}</p>
                 <div className='flex'>
-                    <p className='text-xl'>Rating:{rating}</p>
+                    <p className=''>Rating:{rating}</p>
                    
                     <div className="rating">
                         <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
@@ -29,9 +29,9 @@ const CardReview = ({ review }) => {
                         <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
                     </div>
                 </div>
-                <p className='text-xl'>Publishing Year:{year}</p>
+                <p className=''>Publishing Year:{year}</p>
                 <div className="card-actions">
-                    <Link to={`/details/${_id}`} className="btn btn-primary">Explore Details</Link>
+                    <Link to={`/details/${_id}`} className="btn bg-[#018992] text-white">See More</Link>
                 </div>
             </div>
         </div>

@@ -9,7 +9,7 @@ import Theme from "../Theme/Theme";
 const Navber = () => {
     const { logOut, user } = useContext(AuthContext)
     return (
-        <div className="navbar bg-green-200">
+        <div className="navbar container mx-auto">
             <div className="navbar-start">
                 <div className="dropdown">
                     <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -31,24 +31,35 @@ const Navber = () => {
                         className="menu font-bold text-lg menu-sm dropdown-content bg-base-100 rounded-box z-[50] mt-3 w-52 p-2 shadow">
                         <NavLink to='/'><li><a>Home</a></li></NavLink>
                         <NavLink to='/allReviews'><li><a>All Reviews</a></li></NavLink>
-                        <NavLink to='/addReviews'><li><a>Add Review</a></li></NavLink>
-                        <NavLink to='/myReviews'><li><a>My Reviews</a></li></NavLink>
-                        <NavLink to='/watchList'><li><a>Game WatchList</a></li></NavLink>
+                        <NavLink to='/about'><li><a>About</a></li></NavLink>
+                        <NavLink to='/contact'><li><a>Contact</a></li></NavLink>
                     </ul>
                 </div>
                 <Link to='/'>
-                    <a className="cursor-pointer">
+                    <a className="cursor-pointer flex gap-2 justify-center items-center">
                         <img className="w-20" src={logo} alt="" />
+                        <p className="text-2xl text-white font-bold">Chill Gamer</p>
                     </a>
                 </Link>
             </div>
             <div className="navbar-center hidden lg:flex">
-                <ul className="menu menu-horizontal px-1 font-bold">
+                <ul className="menu menu-horizontal px-1 font-semibold text-white text-base">
                     <NavLink to='/'><li><a>Home</a></li></NavLink>
                     <NavLink to='/allReviews'><li><a>All Reviews</a></li></NavLink>
-                    <NavLink to='/addReviews'><li><a>Add Review</a></li></NavLink>
-                    <NavLink to='/myReviews'><li><a>My Reviews</a></li></NavLink>
-                    <NavLink to='/watchList'><li><a>Game WatchList</a></li></NavLink>
+                    <NavLink to='/about'><li><a>About</a></li></NavLink>
+                    <NavLink to='/contact'><li><a>Contact</a></li></NavLink>
+                    {
+                        user ?
+                            <>
+                                <NavLink to='/addReviews'><li><a>Add Review</a></li></NavLink>
+                                <NavLink to='/myReviews'><li><a>My Reviews</a></li></NavLink>
+                                <NavLink to='/watchList'><li><a>Game WatchList</a></li></NavLink>
+                            </>
+                            :
+                            <>
+                                
+                            </>
+                    }
                 </ul>
             </div>
 

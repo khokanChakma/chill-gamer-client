@@ -2,6 +2,9 @@ import { useContext, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../authprovider/AuthProvider";
 import Swal from "sweetalert2";
+import Lottie from "lottie-react";
+import registerAnimation from '../assets/register.json'
+import { FaGooglePlus } from "react-icons/fa";
 
 const Login = () => {
     const { userLogin, setUser, signInWithGoogle } = useContext(AuthContext);
@@ -46,11 +49,11 @@ const Login = () => {
 
 
     return (
-        <div>
-            <div className="bg-base-300 flex justify-center items-center">
-                <div className="card bg-base-100 w-full max-w-lg shrink-0 rounded-none p-10">
+        <div className="md:flex gap-4 justify-center items-center min-h-screen">
+            <div className="flex justify-center items-center">
+                <div className="card w-full max-w-xl rounded-none p-6">
                     <h2 className="text-center font-semibold text-2xl">Login Your Account</h2>
-                    <form onSubmit={handleLoginSubmit} className="card-body">
+                    <form onSubmit={handleLoginSubmit} className="">
                         <div className="form-control">
                             <label className="label">
                                 <span className="label-text">Email</span>
@@ -74,11 +77,14 @@ const Login = () => {
                         </div>
                         <hr />
                         <div className="text-center">
-                            <div onClick={handleGoogleLogin} className="btn">Google Login</div>
+                            <div onClick={handleGoogleLogin} className="btn text-xl my-4 bg-[#018992] text-white"><FaGooglePlus />Google Login</div>
                         </div>
                     </form>
                     <p className="text-center font-semibold">Dont’t Have An Account ? <Link className="text-red-500" to='/register'>Register</Link></p>
                 </div>
+            </div>
+            <div>
+                <Lottie animationData={registerAnimation}></Lottie>
             </div>
         </div>
     );

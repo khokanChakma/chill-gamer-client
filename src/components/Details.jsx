@@ -1,9 +1,11 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
+import { AuthContext } from "../authprovider/AuthProvider";
 
 const Details = () => {
     const userData = useLoaderData()
+    const {user} = useContext(AuthContext);
     const { coverImage, title, review, name, email, rating, genres, _id } = userData;
     const watchListData = {
         coverImage: coverImage,
@@ -63,7 +65,11 @@ const Details = () => {
 
                     <br />
                     <div className="flex gap-6">
-                        <button onClick={() => handleWatchList(_id)} className="btn rounded-full px-4 text-white bg-[#9538E2]">Add to WatchList</button>
+                       {
+                        user ?  <button onClick={() => handleWatchList(_id)} className="btn rounded-full px-4 text-white bg-[#9538E2]">Add to WatchList</button>
+                        :
+                        <button disabled onClick={() => handleWatchList(_id)} className="btn rounded-full px-4 text-white bg-[#9538E2]">Add to WatchList</button>
+                       }
                     </div>
                 </div>
             </div>
