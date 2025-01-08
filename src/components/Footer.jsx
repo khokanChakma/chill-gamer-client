@@ -16,8 +16,8 @@ const Footer = () => {
                         <h6 className="font-bold text-white text-2xl">Chill Gamer</h6>
                     </div>
                     <div className='flex gap-4'>
-                        <Link to=''>About</Link>
-                        <Link to=''>Contact</Link>
+                        <Link to='about'>About</Link>
+                        <Link to='contact'>Contact</Link>
                     </div>
                     <h6 className="text-xl">Social</h6>
                     <div className="flex gap-4 text-3xl">
