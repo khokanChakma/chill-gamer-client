@@ -1,3 +1,8 @@
+
+<div align="center">
+  <img height="300" src="https://i.ibb.co.com/WHRt2F5/ttt.jpg"  />
+</div>
+
 <h2>Project Name:</h2>
  A Game Review Application
 <h2>Assignment Category: Camellia</h2>
