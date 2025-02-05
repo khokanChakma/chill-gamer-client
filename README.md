@@ -5,8 +5,6 @@
 
 <h2>Project Name:</h2>
  A Game Review Application
-<h2>Assignment Category: Camellia</h2>
-
 
 <h2>Description The Project Purpose: </h2>
 
